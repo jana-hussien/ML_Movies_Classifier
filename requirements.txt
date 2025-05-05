@@ -1,0 +1,5 @@
+numpy
+matplotlib
+streamlit
+opencv-python-headless
+tensorflow
