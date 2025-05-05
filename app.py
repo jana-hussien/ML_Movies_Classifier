@@ -22,7 +22,7 @@ GENRE_NAMES = [
 
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model('my_model.keras', compile=False)
+    model = tf.keras.models.load_model('model.keras', compile=False)
     return model
 
 model = load_model()
