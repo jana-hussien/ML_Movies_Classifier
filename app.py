@@ -40,7 +40,7 @@ uploaded_file = st.file_uploader("Choose a poster image", type=["jpg", "jpeg", "
 
 if uploaded_file:
     st.subheader("Uploaded Poster")
-    st.image(uploaded_file, use_column_width=True)
+    st.image(uploaded_file, use_container_width=True)
 
     with st.spinner("Classifying..."):
         img = load_img(uploaded_file, target_size=(140, 207))
