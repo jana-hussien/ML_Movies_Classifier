@@ -1,8 +1,3 @@
-import streamlit as st
-import tensorflow as tf
-import numpy as np
-from tensorflow.keras.utils import load_img, img_to_array
-from tensorflow.keras.applications.vgg16 import preprocess_input
 
 st.set_page_config(page_title="Movie Genres Classifier", page_icon="🎬")
 
