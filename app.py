@@ -29,10 +29,8 @@ model = load_model()
 
 def predict_genres(img_array, model, threshold=0.5):
 
-    preds = model.predict(img_array)[0]  # shape (25,)
-    # pick all genres above threshold
+    preds = model.predict(img_array)[0]  
     selected = [GENRE_NAMES[i] for i, p in enumerate(preds) if p >= threshold]
-    # if none exceed threshold, pick top 3
     if not selected:
         top_idx = np.argsort(preds)[-3:][::-1]
         selected = [GENRE_NAMES[i] for i in top_idx]
@@ -48,9 +46,7 @@ if uploaded_file:
         img = load_img(uploaded_file, target_size=(140, 207))
         img_array = img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0)
-        # 2) preprocess for VGG16
         img_array = preprocess_input(img_array)
-        # 3) predict
         genres, probs = predict_genres(img_array, model, threshold=0.5)
 
     st.subheader("Predicted Genres")
